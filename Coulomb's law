@@ -1,1 +1,36 @@
 Coulomb's law main.cpp
+#include <iostream>
+#include <cmath>
+
+// Function to calculate Coulomb Force
+double calculateCoulomb(double q1, double q2, double r) {
+    const double k = 8.9875517923e9; // Coulomb's Constant
+    return k * (std::abs(q1 * q2) / std::pow(r, 2));
+}
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+// This is your subroutine (function)
+double calculateCoulomb(double q1, double q2, double r) {
+    double k = 8.99e9; // Coulomb's constant
+    return k * (q1 * q2) / (r * r);
+}
+
+int main() {
+    double q1, q2, r;
+    
+    cout << "Enter charge 1 (in Coulombs): ";
+    cin >> q1;
+    cout << "Enter charge 2 (in Coulombs): ";
+    cin >> q2;
+    cout << "Enter distance (in meters): ";
+    cin >> r;
+
+    double force = calculateCoulomb(q1, q2, r);
+    
+    cout << "The electrostatic force is: " << force << " Newtons" << endl;
+    
+    return 0;
+}
